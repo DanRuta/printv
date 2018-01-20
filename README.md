@@ -1,9 +1,9 @@
 # printv
-printf for C++ vectors, for WebAssembly browser use
+printf for C++ vectors, for WebAssembly browser use. Useful for debugging.
 
 
 # To use
-Add ```#include``` the ```printv.h``` file in your C++ code after your emscripten import.
+```#include``` the ```printv.h``` file in your C++ code after your emscripten import.
 
 To log out data, pass a one, two, or three dimensional vector to ```printv``` function. If using 1D data, you can also use arrays.
 
