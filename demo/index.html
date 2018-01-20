@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>printv</title>
+    <script src="./demo.js"></script>
+    <script>
+    "use strict"
+    window.addEventListener("wasmLoaded", () => {
+        Module.ccall("demo1D", null, null, null)
+        Module.ccall("demo2D", null, null, null)
+        Module.ccall("demo3D", null, null, null)
+    })
+    </script>
+</head>
+<body>
+</body>
+</html>

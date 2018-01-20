@@ -1,7 +1,18 @@
 # printv
 printf for C++ vectors, for WebAssembly browser use
 
-To use, import the printv.h file in your code and pass the ```printv``` function a one, two, or three dimensional vector.
+
+# To use
+Add ```#include``` the ```printv.h``` file in your C++ code after your emscripten import.
+
+To log out data, pass a one, two, or three dimensional vector to ```printv``` function. If using 1D data, you can also use arrays.
+
+<img width="100%" src="demo/demo.png">
 
 
-To develop, install emscripten and run ```node runner.js```.
+# To run the demo
+Run ```node server.js``` and navigate to ```localhost:1337```.
+
+# To develop
+Install emscripten and run ```node runner.js```.
+

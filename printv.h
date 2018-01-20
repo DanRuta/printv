@@ -1,8 +1,7 @@
-#include <emscripten.h>
 #include <vector>
 
-void printv(std::vector<double> values) {
-
+template<class T>
+void printv(T values) {
     EM_ASM(window.printfVector = []);
 
     for (int i=0; i<values.size(); i++) {
@@ -14,7 +13,8 @@ void printv(std::vector<double> values) {
     EM_ASM(console.log(window.printfVector));
 }
 
-void printv(std::vector<std::vector<double>> values) {
+template<class T>
+void printv(std::vector<std::vector<T>> values) {
     EM_ASM(window.printfVector = []);
 
     for (int i=0; i<values.size(); i++) {
@@ -32,7 +32,8 @@ void printv(std::vector<std::vector<double>> values) {
 }
 
 
-void printv(std::vector<std::vector<std::vector<double>>> values) {
+template<class T>
+void printv(std::vector<std::vector<std::vector<T>>> values) {
     EM_ASM(window.printfVector = []);
 
     for (int i=0; i<values.size(); i++) {
@@ -49,6 +50,20 @@ void printv(std::vector<std::vector<std::vector<double>>> values) {
                 }, i, j, values[i][j][k]);
             }
         }
+    }
+
+    EM_ASM(console.log(window.printfVector));
+}
+
+
+template<class T>
+void printv(T values[], int size) {
+    EM_ASM(window.printfVector = []);
+
+    for (int i=0; i<size; i++) {
+        EM_ASM_({
+            window.printfVector.push($0)
+        }, values[i]);
     }
 
     EM_ASM(console.log(window.printfVector));
